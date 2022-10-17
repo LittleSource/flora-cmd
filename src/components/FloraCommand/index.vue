@@ -1,23 +1,13 @@
 <script lang="ts" setup>
 import { ref } from "@vue/runtime-core";
 import { TBox, TText, useInput } from "@temir/core";
-import commands from "./commands";
-
+import commands from "../../composables/commands";
+import { execKey } from "../../composables/exec";
 const inputKey = ref("");
 useInput(onKeyBoard, { isActive: true });
 function onKeyBoard(input: string) {
 	inputKey.value = input;
-	const index = parseInt(input);
-	if (!Number.isNaN(index)) {
-		console.log(index);
-	}
-	// switch (input) {
-	// 	case "q": {
-	// 		setTimeout(() => {
-	// 			process.exit(0);
-	// 		}, 0);
-	// 	}
-	// }
+	execKey(input);
 }
 </script>
 
@@ -35,9 +25,9 @@ function onKeyBoard(input: string) {
 			</TBox>
 		</TBox>
 
-		<TBox v-for="(cmd, index) in commands" :key="index">
+		<TBox v-for="cmd in commands" :key="cmd.key">
 			<TBox width="10%">
-				<TText>{{ index }}</TText>
+				<TText>{{ cmd.key }}</TText>
 			</TBox>
 			<TBox width="40%">
 				<TText>{{ cmd.cmd }}</TText>
@@ -48,6 +38,6 @@ function onKeyBoard(input: string) {
 		</TBox>
 	</TBox>
 	<TBox :width="60">
-		<TText>{{ inputKey }}</TText>
+		<TText>请输入key:{{ inputKey }}</TText>
 	</TBox>
 </template>

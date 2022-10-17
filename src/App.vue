@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { TBox, TText } from "@temir/core";
 import FloraCommand from "./components/FloraCommand/index.vue";
+import { execArg } from "./composables/argv";
+execArg();
 </script>
 
 <template>
