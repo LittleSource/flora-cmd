@@ -33,3 +33,5 @@ flora code init xxx
 flora project dbdump > /tmp/my_backup.sql
 flora k8s xxx
 ```
+
+npm i -D file:./
