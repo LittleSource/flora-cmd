@@ -6,7 +6,7 @@
 
 g: flora generate 生成代码
 
-s: flora serve 启动后端服务
+s: flora server 启动后端服务
 
 w: flora watch 启动watch进程
 

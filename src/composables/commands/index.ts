@@ -1,4 +1,4 @@
-import { FloraCommand } from "./interface";
+import { FloraCommand } from "./types";
 const commands: FloraCommand[] = [
 	{
 		key: "g",
@@ -7,7 +7,7 @@ const commands: FloraCommand[] = [
 	},
 	{
 		key: "s",
-		cmd: "flora serve",
+		cmd: "flora server",
 		desc: "启动后端服务",
 	},
 	{

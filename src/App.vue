@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { TBox, TText } from "@temir/core";
-import FloraCommand from "./components/FloraCommand/index.vue";
-import { execArg } from "./composables/argv";
+import FloraCommandMenu from "./components/FloraCommandMenu/index.vue";
+import { hasArg, execArg } from "./composables/argv";
 execArg();
 </script>
 
@@ -9,5 +9,5 @@ execArg();
 	<TBox :width="100" :height="2">
 		<TText color="#42b883"> 🌈 Hi, Flora command helper! </TText>
 	</TBox>
-	<FloraCommand />
+	<FloraCommandMenu v-if="!hasArg()" />
 </template>
