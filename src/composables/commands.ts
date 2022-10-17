@@ -1,38 +1,49 @@
 import { FloraCommand } from "./interface";
 const commands: FloraCommand[] = [
 	{
-		key: "p",
-		cmd: "pwd",
-		desc: "生成文件",
+		key: "g",
+		cmd: "flora generate",
+		desc: "生成代码",
 	},
 	{
-		key: "f",
-		cmd: "flora genearate",
-		desc: "生成文件",
+		key: "s",
+		cmd: "flora serve",
+		desc: "启动后端服务",
+	},
+	{
+		key: "w",
+		cmd: "flora watch",
+		desc: "开启watch进程",
+	},
+	//yarn dev
+	{
+		key: "u",
+		cmd: "flora updatedb",
+		desc: "更新数据库",
 	},
 	{
 		key: "c",
-		cmd: "flora genearate",
-		desc: "生成文件",
+		cmd: "flora updatedb --create_db",
+		desc: "创建并更新数据库",
 	},
 	{
-		key: "a",
-		cmd: "flora genearate",
-		desc: "生成文件",
+		key: "p",
+		cmd: "flora upgrade",
+		desc: "go.mod依赖关系的版本升级",
 	},
 	{
-		key: "f",
-		cmd: "flora genearate",
-		desc: "生成文件",
+		key: "r",
+		cmd: "flora code release",
+		desc: "版本发布",
 	},
 	{
-		key: "f",
-		cmd: "flora genearate",
-		desc: "生成文件",
+		key: "o",
+		cmd: "-",
+		desc: "打开flora文档website",
 	},
 	{
 		key: "q",
-		cmd: "quit",
+		cmd: "-",
 		desc: "退出",
 	},
 ];

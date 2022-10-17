@@ -12,12 +12,12 @@ function onKeyBoard(input: string) {
 </script>
 
 <template>
-	<TBox flex-direction="column" :width="60" border-style="double">
+	<TBox flex-direction="column" :width="70" border-style="double">
 		<TBox>
-			<TBox width="10%">
-				<TText>序号</TText>
+			<TBox width="8%">
+				<TText>key</TText>
 			</TBox>
-			<TBox width="40%">
+			<TBox width="42%">
 				<TText>命令</TText>
 			</TBox>
 			<TBox width="50%">
@@ -26,10 +26,10 @@ function onKeyBoard(input: string) {
 		</TBox>
 
 		<TBox v-for="cmd in commands" :key="cmd.key">
-			<TBox width="10%">
+			<TBox width="8%">
 				<TText>{{ cmd.key }}</TText>
 			</TBox>
-			<TBox width="40%">
+			<TBox width="42%">
 				<TText>{{ cmd.cmd }}</TText>
 			</TBox>
 			<TBox width="50%">
