@@ -7,7 +7,7 @@ export const execArg = () => {
 	}
 };
 
-// 启动命令时有参数传递 返回true
+// 启动命令时是否有参数传递
 export const hasArg = (): boolean => {
 	return process.argv.length > 2;
 };

@@ -1,5 +1,5 @@
-import { FloraCommand } from "./types";
-const commands: FloraCommand[] = [
+import { shellCommand } from "./types";
+const commands: shellCommand[] = [
 	{
 		key: "g",
 		cmd: "flora generate",
@@ -7,7 +7,7 @@ const commands: FloraCommand[] = [
 	},
 	{
 		key: "s",
-		cmd: "flora server",
+		cmd: "flora",
 		desc: "启动后端服务",
 	},
 	{

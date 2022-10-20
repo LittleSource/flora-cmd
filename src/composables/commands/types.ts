@@ -1,7 +1,17 @@
-export type FloraCommand = {
+export type baseCommand = {
 	key: string;
-	cmd: string;
 	desc: string;
 	type?: "shell" | "func";
-	//TODO func?: function():any 支持函数
 };
+
+export interface shellCommand extends baseCommand {
+	type?: "shell";
+	cmd: string;
+}
+interface commandFunc {
+	(a: number, b: number): number;
+}
+export interface funcCommand extends baseCommand {
+	type?: "func";
+	func?: commandFunc;
+}
