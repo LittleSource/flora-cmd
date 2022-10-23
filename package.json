@@ -1,11 +1,14 @@
 {
 	"name": "flora-cli",
+	"version": "0.0.1",
+	"description": "flora快捷命令工具",
 	"license": "MIT",
 	"scripts": {
 		"dev": "temir src/main.ts",
 		"build": "temir build src/main.ts",
 		"start": "pnpm run build && node dist/main.js"
 	},
+	"main": "cli.mjs",
 	"bin": {
 		"f": "cli.mjs"
 	},
@@ -14,7 +17,6 @@
 	},
 	"devDependencies": {
 		"@temir/cli": "0.0.20",
-		"@types/node": "^18.11.0",
-		"flora-temir": "file:"
+		"@types/node": "^18.11.0"
 	}
 }
