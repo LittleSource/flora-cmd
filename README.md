@@ -12,17 +12,17 @@ w: flora watch 启动watch进程
 
 u: flora updatedb 更新数据库
 
-c: flora updatedb --create_db 创建并更新数据库
+uc: flora updatedb --create_db 创建并更新数据库
 
-p: flora upgrade go.mod依赖关系的版本升级
+up: flora upgrade go.mod依赖关系的版本升级
 
 r: flora code release 版本发布
 
-o: flora doc 打开web文档
+doc: flora doc 打开web文档
 
 ## 待支持
 
-为了简单起见，暂时只支持一个参数，例如`flora code init ma.applysquare.net/hzl/flora-hello`
+暂时只支持一个参数，例如`flora code init ma.applysquare.net/hzl/flora-hello`
 
 这种需要`ma.applysquare.net/hzl/flora-hello`参数的flora命令暂不支持，以后有空会更新。
 
