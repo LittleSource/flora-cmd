@@ -1,5 +1,5 @@
 import commands from "./commands";
-import { spawn } from "child_process";
+import { spawnSync } from "child_process";
 import { useError } from "./log/useError";
 import { shellCommand } from "./commands/types";
 const { addError } = useError();
@@ -13,11 +13,9 @@ export const execKey = (cmdKey: string) => {
 		}
 		const cmds = (command as shellCommand).cmd.split(" ")
 		try {
-			const task = spawn(cmds[0], cmds.filter((_, index) => index > 0), {
-				detached: true,
+			spawnSync(cmds[0], cmds.filter((_, index) => index > 0), {
 				stdio: 'inherit'
 			});
-			task.unref();
 		} catch (err) {
 			addError(`command exec error!${err}`);
 		}
