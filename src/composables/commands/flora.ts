@@ -2,40 +2,38 @@ import { shellCommand } from "./types";
 const floraCommands: shellCommand[] = [
     {
         key: "g",
-        cmd: "cat package.json",
+        cmd: "flora.sh generate",
         desc: "生成代码",
     },
     {
         key: "s",
-        cmd: "flora",
+        cmd: "flora.sh server",
         desc: "启动后端服务",
     },
     {
         key: "w",
-        cmd: "flora watch",
+        cmd: "flora.sh watch",
         desc: "开启watch进程",
     },
-    //yarn dev
     {
         key: "u",
-        cmd: "flora updatedb",
+        cmd: "flora.sh updatedb",
         desc: "更新数据库",
     },
     {
         key: "uc",
-        cmd: "flora updatedb --create_db",
+        cmd: "flora.sh updatedb --create_db",
         desc: "创建并更新数据库",
     },
     {
         key: "up",
-        cmd: "flora upgrade",
+        cmd: "flora.sh upgrade",
         desc: "go.mod依赖关系的版本升级",
     },
     {
         key: "r",
-        cmd: "flora code release",
+        cmd: "flora.sh code release",
         desc: "版本发布",
     },
-
 ];
 export default floraCommands;
