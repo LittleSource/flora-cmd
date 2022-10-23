@@ -6539,37 +6539,37 @@ var import_core = require("@temir/core");
 var floraCommands = [
   {
     key: "g",
-    cmd: "cat package.json",
+    cmd: "flora.sh generate",
     desc: "\u751F\u6210\u4EE3\u7801"
   },
   {
     key: "s",
-    cmd: "flora",
+    cmd: "flora.sh server",
     desc: "\u542F\u52A8\u540E\u7AEF\u670D\u52A1"
   },
   {
     key: "w",
-    cmd: "flora watch",
+    cmd: "flora.sh watch",
     desc: "\u5F00\u542Fwatch\u8FDB\u7A0B"
   },
   {
     key: "u",
-    cmd: "flora updatedb",
+    cmd: "flora.sh updatedb",
     desc: "\u66F4\u65B0\u6570\u636E\u5E93"
   },
   {
     key: "uc",
-    cmd: "flora updatedb --create_db",
+    cmd: "flora.sh updatedb --create_db",
     desc: "\u521B\u5EFA\u5E76\u66F4\u65B0\u6570\u636E\u5E93"
   },
   {
     key: "up",
-    cmd: "flora upgrade",
+    cmd: "flora.sh upgrade",
     desc: "go.mod\u4F9D\u8D56\u5173\u7CFB\u7684\u7248\u672C\u5347\u7EA7"
   },
   {
     key: "r",
-    cmd: "flora code release",
+    cmd: "flora.sh code release",
     desc: "\u7248\u672C\u53D1\u5E03"
   }
 ];
@@ -6622,7 +6622,7 @@ var __sfc_main = /* @__PURE__ */ (0, vue_exports.defineComponent)({
         }),
         (0, vue_exports.createVNode)((0, vue_exports.unref)(import_core.TBox), {
           "flex-direction": "column",
-          width: 70,
+          width: 90,
           "border-style": "double"
         }, {
           default: (0, vue_exports.withCtx)(() => [
@@ -6757,11 +6757,9 @@ var execKey = (cmdKey) => {
     }
     const cmds = command.cmd.split(" ");
     try {
-      const task = (0, import_child_process2.spawn)(cmds[0], cmds.filter((_, index) => index > 0), {
-        detached: true,
+      (0, import_child_process2.spawnSync)(cmds[0], cmds.filter((_, index) => index > 0), {
         stdio: "inherit"
       });
-      task.unref();
     } catch (err) {
       addError(`command exec error!${err}`);
     }
