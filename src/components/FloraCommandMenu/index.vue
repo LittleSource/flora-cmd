@@ -7,7 +7,7 @@ import commands from "../../composables/commands";
 	<TBox :width="100" :height="2">
 		<TText color="#42b883"> 🌈 Hi, Flora command helper! </TText>
 	</TBox>
-	<TBox flex-direction="column" :width="70" border-style="double">
+	<TBox flex-direction="column" :width="90" border-style="double">
 		<TBox>
 			<TBox width="8%">
 				<TText>key</TText>
