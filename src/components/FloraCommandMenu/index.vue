@@ -1,14 +1,6 @@
 <script lang="ts" setup>
-import { ref } from "@vue/runtime-core";
-import { TBox, TText, useInput } from "@temir/core";
+import { TBox, TText } from "@temir/core";
 import commands from "../../composables/commands";
-import { execKey } from "../../composables/exec";
-const inputKey = ref("");
-useInput(onKeyBoard, { isActive: true });
-function onKeyBoard(input: string) {
-	inputKey.value = input;
-	execKey(input);
-}
 </script>
 
 <template>
@@ -30,7 +22,7 @@ function onKeyBoard(input: string) {
 				<TText>{{ cmd.key }}</TText>
 			</TBox>
 			<TBox width="42%">
-				<TText>{{ cmd.cmd }}</TText>
+				<TText>{{ cmd.cmd || "-" }}</TText>
 			</TBox>
 			<TBox width="50%">
 				<TText>{{ cmd.desc }}</TText>
@@ -38,6 +30,6 @@ function onKeyBoard(input: string) {
 		</TBox>
 	</TBox>
 	<TBox :width="60">
-		<TText>请输入key:{{ inputKey }}</TText>
+		<TText>请输入f key. 例如f g,会自动执行flora generate</TText>
 	</TBox>
 </template>
