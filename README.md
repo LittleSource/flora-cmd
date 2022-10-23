@@ -1,4 +1,8 @@
-# flora-cli
+# flora-cmd
+
+```shell
+npm i flora-cmd -g
+```
 
 基于[temir](https://github.com/webfansplz/temir)
 
@@ -33,5 +37,3 @@ flora code init xxx
 flora project dbdump > /tmp/my_backup.sql
 flora k8s xxx
 ```
-
-npm i -D file:./
