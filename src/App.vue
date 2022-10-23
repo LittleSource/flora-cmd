@@ -1,25 +1,18 @@
 <script lang="ts" setup>
+import { ref } from "vue";
 import { TBox, TText } from "@temir/core";
 import { onMounted } from "vue";
 import FloraCommandMenu from "./components/FloraCommandMenu/index.vue";
-import { hasArg } from "./composables/argv";
-import { exit } from "./composables/exec";
-import { useLogInfo } from "./composables/log/useInfo";
-const { logInfoText } = useLogInfo();
-const argFlag = hasArg();
-onMounted(() => {
-	if (!argFlag) {
-		exit();
-	}
-});
+import { execArg } from "./composables/argv";
+import { useError } from "./composables/log/useError";
+const { errorText } = useError();
+const hasArg = ref(true);
+onMounted(() => (hasArg.value = execArg()));
 </script>
 
 <template>
-	<TBox :width="100" :height="2">
-		<TText color="#42b883"> 🌈 Hi, Flora command helper! </TText>
-	</TBox>
-	<FloraCommandMenu v-if="!argFlag" />
-	<TBox :width="100" :height="2">
-		<TText> {{ logInfoText }} </TText>
+	<TBox :width="100" flex-direction="column">
+		<FloraCommandMenu v-if="!hasArg" />
+		<TText> {{ errorText }} </TText>
 	</TBox>
 </template>

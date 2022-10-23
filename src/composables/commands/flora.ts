@@ -2,7 +2,7 @@ import { shellCommand } from "./types";
 const floraCommands: shellCommand[] = [
     {
         key: "g",
-        cmd: "flora generate",
+        cmd: "cat package.json",
         desc: "生成代码",
     },
     {

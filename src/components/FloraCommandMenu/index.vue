@@ -4,6 +4,9 @@ import commands from "../../composables/commands";
 </script>
 
 <template>
+	<TBox :width="100" :height="2">
+		<TText color="#42b883"> 🌈 Hi, Flora command helper! </TText>
+	</TBox>
 	<TBox flex-direction="column" :width="70" border-style="double">
 		<TBox>
 			<TBox width="8%">

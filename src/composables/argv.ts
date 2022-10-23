@@ -1,13 +1,10 @@
-import { execKey } from "./exec";
+import { execKey, exit } from "./exec";
 
-export const execArg = () => {
-	if (hasArg()) {
-		const cmdKey = process.argv[2];
-		execKey(cmdKey);
+export const execArg = (): boolean => {
+	if (process.argv.length > 2) {
+		execKey(process.argv[2])
+		return true
 	}
-};
-
-// 启动命令时是否有参数传递
-export const hasArg = (): boolean => {
-	return process.argv.length > 2;
+	exit()
+	return false
 };
