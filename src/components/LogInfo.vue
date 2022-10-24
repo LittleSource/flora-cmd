@@ -6,7 +6,7 @@ const { errorText } = useError();
 
 <template>
 	<TBox :width="100" :marginY="1" flexDirection="column">
-		<TText color="red" inverse> Error: </TText>
+		<TText v-if="!!errorText.trim()" color="red" inverse> Error: </TText>
 		<TText color="red">
 			{{ errorText }}
 		</TText>
