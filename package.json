@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "temir src/main.ts",
 		"build": "temir build src/main.ts",
-		"start": "pnpm run build && node dist/main.js"
+		"start": "npm run build && node dist/main.js"
 	},
 	"main": "cli.mjs",
 	"bin": {
@@ -17,6 +17,6 @@
 	},
 	"devDependencies": {
 		"@temir/cli": "0.0.20",
-		"@types/node": "^18.11.0"
+		"@types/node": "^18.11.1"
 	}
 }

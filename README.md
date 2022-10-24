@@ -4,8 +4,6 @@
 npm i flora-cmd -g
 ```
 
-基于[temir](https://github.com/webfansplz/temir)
-
 ## 目前已支持的命令
 
 g: flora generate 生成代码
@@ -37,3 +35,7 @@ flora code init xxx
 flora project dbdump > /tmp/my_backup.sql
 flora k8s xxx
 ```
+
+## support
+
+[temir](https://github.com/webfansplz/temir)

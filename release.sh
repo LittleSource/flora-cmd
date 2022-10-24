@@ -8,6 +8,7 @@ npm run build
 rm -rf release
 mkdir release
 cp cli.mjs ./release
+cp README.md ./release
 mv ./dist ./release/
 
 cd release

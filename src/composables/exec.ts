@@ -20,7 +20,7 @@ export const execKey = (cmdKey: string) => {
 			addError(`command exec error!${err}`);
 		}
 	} else {
-		addError(`not fond key：${cmdKey}`);
+		addError(`not fond key: ${cmdKey}, please use f command to show key list`);
 	}
 	exit();
 };

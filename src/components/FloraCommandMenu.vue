@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { TBox, TText } from "@temir/core";
-import commands from "../../composables/commands";
+import commands from "../composables/commands";
 </script>
 
 <template>
