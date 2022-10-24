@@ -1,13 +1,16 @@
 #!/bin/bash
+#set -e
 echo "🚀发布版本:"$1
 echo ""
+
+npm run build
+
 rm -rf release
 mkdir release
-temir build src/main.ts
 cp cli.mjs ./release
 mv ./dist ./release/
-cd release
 
+cd release
 cat > package.json << EOF
 {
 	"name": "flora-cmd",
@@ -17,6 +20,9 @@ cat > package.json << EOF
 	"main": "cli.mjs",
 	"bin": {
 		"f": "cli.mjs"
+	},
+	"dependencies": {
+		"@temir/core": "0.0.20"
 	}
 }
 EOF
