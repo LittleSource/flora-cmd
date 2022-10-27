@@ -4,15 +4,15 @@ import { TBox } from "@temir/core";
 import { onMounted } from "vue";
 import FloraCommandMenu from "./components/FloraCommandMenu.vue";
 import LogInfo from "./components/LogInfo.vue";
-import { initArg } from "./composables/argv";
 
-const hasArg = ref(true);
-onMounted(() => (hasArg.value = initArg()));
+import { hasArg } from "./composables/argv";
+const _hasArg = ref(true);
+onMounted(() => (_hasArg.value = hasArg()));
 </script>
 
 <template>
 	<TBox :width="100" flex-direction="column">
-		<FloraCommandMenu v-if="!hasArg" />
+		<FloraCommandMenu v-if="!_hasArg" />
 		<LogInfo />
 	</TBox>
 </template>

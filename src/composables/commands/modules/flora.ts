@@ -1,4 +1,4 @@
-import { shellCommand } from "./types";
+import { shellCommand } from "../types";
 const floraCommands: shellCommand[] = [
     {
         key: "g",

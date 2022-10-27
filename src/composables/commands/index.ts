@@ -1,6 +1,6 @@
 import { funcCommand, shellCommand } from "./types";
-import floraCommands from "./flora";
-import funcCommands from "./func";
+import floraCommands from "./modules/flora";
+import funcCommands from "./modules/func";
 const commands: (shellCommand | funcCommand)[] = [
 	...floraCommands,
 	...funcCommands
