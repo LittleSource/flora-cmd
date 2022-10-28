@@ -24,6 +24,18 @@ doc: flora doc 打开web文档
 
 ## 待支持
 
+### 1. 支持预设项目路径
+
+eg .
+
+`f set 1 ~/a2/src/eng/polarise-acgedu/projects/dev`
+
+`f cd 1`
+
+`f list`
+
+### 2. 支持多参数
+
 暂时只支持一个参数，例如`flora code init ma.applysquare.net/hzl/flora-hello`
 
 这种需要`ma.applysquare.net/hzl/flora-hello`参数的flora命令暂不支持，以后有空会更新。
