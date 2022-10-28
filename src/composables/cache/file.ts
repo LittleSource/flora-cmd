@@ -1,15 +1,13 @@
 import fs from "fs"
 import { cacheObject } from './types'
 const filePath = "./data.json"
-
 class fileCache extends cacheObject {
     initCache() {
-        try {
-            //TODO 查询文件是否存在
-            var data = fs.readFileSync(filePath);
-        } catch (e) {
-            console.error("");
-        }
+        fs.access(filePath, fs.constants.F_OK, (err) => {
+            fs.writeFile(filePath, '{}', () => {
+
+            })
+        });
     }
     getCache(key: string): string {
         try {
