@@ -1,17 +1,17 @@
-export type baseCommand = {
-	key: string;
-	desc: string;
-	type?: "shell" | "func";
-};
+export interface baseCommand {
+  key: string
+  desc: string
+  type?: 'shell' | 'func'
+}
 
 export interface shellCommand extends baseCommand {
-	type?: "shell";
-	cmd: string;
+  type?: 'shell'
+  cmd: string
 }
 interface commandFunc {
-	(): void;
+  (): void
 }
 export interface funcCommand extends baseCommand {
-	type?: "func";
-	func?: commandFunc;
+  type?: 'func'
+  func?: commandFunc
 }

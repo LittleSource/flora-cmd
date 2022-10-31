@@ -1,3 +1,3 @@
-import fileCache from './file'
+import FileCache from './file'
 
-export default new fileCache()
+export default new FileCache()
