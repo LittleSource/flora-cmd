@@ -8,13 +8,13 @@ export const exit = (ms = 500) => setTimeout(() => process.exit(0), ms)
 
 export const execKey = (cmdKey: string) => {
   const command = commands.find(element => element.key === cmdKey)
-  if (!commands) {
+  if (typeof command === 'undefined') {
     addError(`not fond key: ${cmdKey}, please use f command to show key list`)
-    exit()
+    return
   }
   if ('func' in command!) {
     command.func ? command.func() : addError('the execute function for this command is undefined')
-    exit()
+    return
   }
   if ('cmd' in command!) {
     const cmds = (command as shellCommand).cmd.split(' ')
@@ -27,6 +27,5 @@ export const execKey = (cmdKey: string) => {
       addError(`command exec error!${err}`)
     }
   }
-  exit()
 }
 

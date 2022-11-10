@@ -1,17 +1,30 @@
 import cache from '../cache'
-
-interface productType {
-  num: number// 项目编号
-  path: string// 路径
-}
+import type { productType } from './types'
+import defaultProduct from './default'
 
 export const getProductList = (): productType[] => {
   const products = cache.getCache('product')
-  console.log(products)
-  return []
+  return JSON.parse(products)
 }
 
 export const setProduct = (product: productType) => {
-  console.log(product)
-  return []
+  let productsList: productType[] = []
+  const productsStr = cache.getCache('product')
+
+  if (productsStr.length > 0)
+    productsList = JSON.parse(productsStr)
+
+  productsList.push(product)
+  cache.setCache('product', JSON.stringify(productsList))
+}
+
+export const initProduct = async () => {
+  return new Promise<void>((resolve, reject) => {
+    cache.initCache().then(() => {
+      defaultProduct.forEach(item => setProduct(item))
+      resolve()
+    }).catch((err) => {
+      reject(err)
+    })
+  })
 }

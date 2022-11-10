@@ -1,8 +1,13 @@
 import { initArg } from './argv'
-import cache from './cache'
-
+import { exit } from './exec'
+import { initProduct } from './gopath'
+import { useError } from './log/useError'
+const { addError } = useError()
 export default function initApp() {
-  initArg()
-  cache.initCache()
-  console.log(cache.setCache('pr', 'dsdsd'))
+  initProduct().then(() => {
+    initArg()
+    exit()
+  }).catch((err) => {
+    addError(`init product catch fail ${err}`)
+  })
 }

@@ -1,4 +1,4 @@
-import { execKey, exit } from './exec'
+import { execKey } from './exec'
 
 export const hasArg = (): boolean => {
   return process.argv.length > 2
@@ -9,6 +9,5 @@ export const initArg = (): boolean => {
     execKey(process.argv[2])
     return true
   }
-  exit()
   return false
 }
