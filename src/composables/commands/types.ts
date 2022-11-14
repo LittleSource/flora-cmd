@@ -9,7 +9,7 @@ export interface shellCommand extends baseCommand {
   cmd: string
 }
 interface commandFunc {
-  (): void
+  (arg: string[]): string
 }
 export interface funcCommand extends baseCommand {
   type?: 'func'

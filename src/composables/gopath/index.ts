@@ -3,8 +3,10 @@ import type { productType } from './types'
 import defaultProduct from './default'
 
 export const getProductList = (): productType[] => {
-  const products = cache.getCache('product')
-  return JSON.parse(products)
+  const productStr = cache.getCache('product')
+  if (!productStr)
+    return []
+  return JSON.parse(productStr)
 }
 
 export const setProduct = (product: productType) => {
@@ -21,7 +23,8 @@ export const setProduct = (product: productType) => {
 export const initProduct = async () => {
   return new Promise<void>((resolve, reject) => {
     cache.initCache().then(() => {
-      defaultProduct.forEach(item => setProduct(item))
+      if (getProductList().length === 0)
+        defaultProduct.forEach(item => setProduct(item))
       resolve()
     }).catch((err) => {
       reject(err)
