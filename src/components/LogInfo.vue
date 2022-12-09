@@ -5,8 +5,8 @@ const { errorText } = useError()
 </script>
 
 <template>
-  <TBox :width="100" :margin-y="1" flex-direction="column">
-    <TText v-if="!!errorText.trim()" color="red" inverse>
+  <TBox v-show="errorText.trim() !== ''" :width="100" :margin-y="1" flex-direction="column">
+    <TText color="red" inverse>
       Error:
     </TText>
     <TText color="red">
