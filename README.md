@@ -4,6 +4,16 @@
 npm i flora-cmd -g
 ```
 
+## 例子
+
+![terminal-example](https://github.com/LittleSource/flora-cmd/blob/main/example/terminal.png?raw=true)
+
+在终端执行`f g`就相当于执行`flora generate`
+
+在终端执行`f uc`就相当于执行`flora updatedb --create_db`
+
+...
+
 ## 目前已支持的命令
 
 g: flora generate 生成代码
